@@ -2,16 +2,17 @@
 
 Statiskas lapas. Nav WordPress, nav build soļa, nav atkarību — atver failu pārlūkā un tas strādā.
 
-| Fails | Nosaukums | Salikts no |
+| Mape | Nosaukums | Lapas |
 |---|---|---|
-| `1-klinika.html` | Klīnika | Animal Clinic (galvene, komanda, kājene) + Veterinary Hospital (specializācijas, atsauksmes) |
-| `2-kepa.html` | Ķepa | Bennett's (galvene, BUJ) + PawCare (pakalpojumi, atsauksmes, kājene) + Pet Care Store (komandas kartes) |
-| `3-skaidrs.html` | Skaidrs | Neve (galvene, "Ko mēs darām", atsauksmes) + Bennett's (BUJ) + Pet Care Store (kājene) |
-| `index.html` | Izvēle | Trīs prototipu saraksts ar saitēm |
+| `klinika/` | Klīnika | Animal Clinic + Veterinary Hospital + Pet Care Store |
+| `kepa/` | Ķepa | Bennett's + PawCare |
+| `skaidrs/` | Skaidrs | Neve + Bennett's + Pet Care Store |
+
+Katrā mapē 6 lapas: `index`, `pakalpojumi`, `cenradis`, `klinika`, `faq`, `kontakti`. Ģenerators: `python3 _src/build.py` (saturs un CSS — `_src/`).
 
 ## Kā rediģēt
 
-Katra faila `<style>` sākumā ir `:root { ... }` bloks ar visiem mainīgajiem:
+Katras lapas `<style>` ir `:root { ... }` bloks ar visiem mainīgajiem:
 
 ```css
 --brand:#289CFF;   /* galvenā zilā — bisudarzs.lv */
@@ -69,13 +70,3 @@ Dzīvā lapa (WordPress 7.0.4 + qTranslate-X, abi sen neatjaunināti) ir jāsak�
 - Nav horizontālās ritināšanas pie 500 / 820 / 1440 px.
 - Telefonā izvēlne sakļaujas zem hamburgera, apakšizvēlnes atveras kā akordeons.
 - `prefers-reduced-motion` izslēdz visu kustību.
-
----
-
-## Publicēšana
-
-Šī lapa ir publicēta caur GitHub Pages tikai tāpēc, lai klientam būtu ko atvērt pārlūkā.
-Visās lapās ir `noindex` un `robots.txt` ar `Disallow: /`, lai meklētājos tās neparādās
-un netraucē īstajai lapai bisudarzs.lv.
-
-Fotogrāfijas un logotips pieder klīnikai "Bišu Dārzs" un ir paņemti no bisudarzs.lv.
