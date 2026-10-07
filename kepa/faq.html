@@ -100,14 +100,14 @@ svg{display:block;width:1em;height:1em}
 .btn-sm{padding:10px 17px;font-size:14px}
 
 /* ---------- sekcijas ---------- */
-.sec{padding:56px 0}
-.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.sec{padding:64px 0}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
 .sec-head.mid{align-items:center;text-align:center}
 .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--brand)}
 .sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:800}
 .sec-head p{color:var(--muted);max-width:62ch;font-size:16px}
 .sec-head.mid p{margin-inline:auto}
-@media (min-width:800px){.sec{padding:76px 0}}
+@media (min-width:800px){.sec{padding:96px 0}.sec-head{margin-bottom:56px}}
 
 /* ---------- foto vietturis ---------- */
 .ph{position:relative;display:grid;place-items:center;background:var(--tint);color:var(--brand);
@@ -123,7 +123,8 @@ svg{display:block;width:1em;height:1em}
 /* ---------- zooveikals + zīmoli ---------- */
 .shop{display:grid;gap:22px;align-items:center}
 .shop-ph{aspect-ratio:4/3;border-radius:var(--r-md)}
-.shop-b{display:flex;flex-direction:column;gap:12px}
+.shop-b{display:flex;flex-direction:column;gap:16px}
+.shop-b p+p{margin-top:6px}
 .shop-b h2{font-size:clamp(22px,3.2vw,31px);font-weight:800}
 .shop-b p{color:var(--body);font-size:15px;max-width:52ch}
 .shop .brands{justify-content:flex-start;gap:14px 28px;margin-top:8px}
@@ -360,7 +361,7 @@ svg{display:block;width:1em;height:1em}
 .dir-d{font-size:14px;color:var(--muted);line-height:1.5}
 .dir-i{display:grid;place-items:center}
 .dir-i svg{width:48%;height:48%}
-.dirs-more{display:flex;justify-content:center;margin-top:32px}
+.dirs-more{display:flex;justify-content:center;margin-top:44px}
 
 .dir,.dir b,.dir-d,.dir-i{transition:opacity .5s ease,transform .25s ease,background .18s,color .18s,border-color .18s,box-shadow .18s}
 .dir:hover,.dir:focus-visible{background:var(--brand);border-color:var(--brand)}
@@ -370,11 +371,11 @@ svg{display:block;width:1em;height:1em}
 /* ---------- par klīniku (īss bloks) ---------- */
 .ab{display:grid;gap:30px;align-items:center}
 .ab-ph{aspect-ratio:4/3}
-.ab-b{display:flex;flex-direction:column;gap:14px;padding:6px 4px}
+.ab-b{display:flex;flex-direction:column;gap:20px;padding:6px 4px}
 .ab-b h2{font-size:clamp(25px,3.6vw,36px);font-weight:800}
 .ab-b p{max-width:54ch}
-.ab-b .btn{align-self:flex-start;margin-top:10px}
-@media (min-width:880px){.ab{grid-template-columns:1fr 1fr;gap:72px}.ab-b{padding:10px 8px;gap:16px}}
+.ab-b .btn{align-self:flex-start;margin-top:12px}
+@media (min-width:880px){.ab{grid-template-columns:1fr 1fr;gap:72px}.ab-b{padding:10px 8px;gap:22px}}
 
 /* ---------- kāpēc izvēlas mūs ---------- */
 .wi{display:flex;gap:13px;align-items:flex-start}
@@ -402,8 +403,21 @@ svg{display:block;width:1em;height:1em}
 .tg{display:grid;gap:18px;grid-template-columns:1fr}
 @media (min-width:880px){.tg{grid-template-columns:repeat(3,1fr);gap:22px}}
 
+/* ---------- atsauksmju slīdnis: vesels skaits kartīšu, neviena nav nogriezta ---------- */
+.tr-wrap{position:relative}
+.tr{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 18px;scrollbar-width:none;align-items:stretch}
+.tr::-webkit-scrollbar{display:none}
+.tr .t{flex:0 0 100%;scroll-snap-align:start}
+@media (min-width:640px){.tr .t{flex-basis:calc((100% - 22px)/2)}}
+@media (min-width:880px){.tr .t{flex-basis:calc((100% - 44px)/3)}}
+.tr-nav{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.tr-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-str);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center;padding:0;transition:.15s}
+.tr-nav button:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.tr-nav svg{width:18px;height:18px}
+.tr-nav .prev svg{transform:rotate(180deg)}
+
 /* ---------- partneri ---------- */
-.partners .sec-head{margin-bottom:52px}
+.partners .sec-head{margin-bottom:64px}
 .plogos{display:flex;flex-wrap:wrap;gap:34px 72px;align-items:center;justify-content:center}
 .plogos img{height:60px;width:auto;mix-blend-mode:multiply;opacity:.9;transition:opacity .2s}
 .plogos img:hover{opacity:1}
@@ -416,7 +430,7 @@ svg{display:block;width:1em;height:1em}
 @media (min-width:620px){.cf-cols{grid-template-columns:1fr 1fr}}
 @media (min-width:980px){.cf-cols{grid-template-columns:1.3fr .8fr 1.15fr 1.2fr;gap:48px;padding:64px 0 48px}}
 .cf-c{display:flex;flex-direction:column;gap:14px;font-size:14.5px;min-width:0}
-.cf-c .logo-img{height:50px}
+.cf-c .logo-img{height:44px;margin-top:6px}
 .cf-brand p{max-width:26ch;line-height:1.55}
 .cf-h{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--cf-hi);margin-bottom:4px}
 .cf-menu,.cf-list{display:flex;flex-direction:column;gap:11px}
@@ -521,7 +535,7 @@ svg{display:block;width:1em;height:1em}
 
 
 /* ===== Ķepa (2) ===== */
-:root{--fh-shade:linear-gradient(180deg,rgba(9,56,97,.5),rgba(9,56,97,.72));
+:root{--fh-shade:linear-gradient(180deg,rgba(9,56,97,.36),rgba(9,56,97,.58));
   --cf-bg:var(--navy);--cf-fg:#D5E6F6;--cf-hi:#fff;--cf-chip:rgba(255,255,255,.1);--cf-line:rgba(255,255,255,.16)}
 .fh{align-items:center;text-align:center;min-height:560px;border-radius:0 0 40px 40px}
 .fh-in{display:flex;flex-direction:column;align-items:center;padding-top:70px;padding-bottom:70px}
@@ -532,7 +546,6 @@ svg{display:block;width:1em;height:1em}
 .dir{background:var(--surface);border-radius:var(--r-md);padding:52px 22px 44px;box-shadow:0 3px 18px -10px rgba(9,56,97,.35)}
 .dir-i{position:absolute;top:-32px;left:50%;transform:translateX(-50%);width:66px;height:66px;border-radius:50%;
   border:5px solid var(--bg);background:var(--brand);color:#fff}
-.dir:nth-child(2) .dir-i{background:var(--navy)}
 .dir:nth-child(3) .dir-i{background:var(--brand-d)}
 .dir:nth-child(4) .dir-i{background:#5BB8FF}
 /* hover: baltajam ikonas aplim uz gaišā fona vajag kontūru */
@@ -543,17 +556,20 @@ svg{display:block;width:1em;height:1em}
 /* priekšrocības ap centrālo foto */
 .why2{display:grid;gap:16px;align-items:center}
 .why2 .col{display:grid;gap:16px}
-.why2 .wi{background:var(--surface);border-radius:999px;padding:16px 26px 16px 16px;align-items:center;box-shadow:0 3px 18px -12px rgba(9,56,97,.4)}
+.why-sec .sec-head{margin-bottom:64px}
+.why2 .wi{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:18px 28px 18px 18px;align-items:center;box-shadow:0 6px 22px -14px rgba(9,56,97,.45)}
 .why2 .wi-i{border-radius:50%;width:56px;height:56px;flex-basis:56px;background:var(--brand);color:#fff}
 .why2 .wi-i svg{width:25px;height:25px}
 .why2-ph{aspect-ratio:1;border-radius:50%;width:100%;max-width:300px;margin:8px auto;box-shadow:0 0 0 10px var(--surface),0 0 0 11px var(--line)}
 @media (max-width:939px){.why2 .wi{border-radius:28px}}
-@media (min-width:940px){.why2{grid-template-columns:1fr 300px 1fr;gap:44px}.why2 .col{gap:30px}
+@media (min-width:940px){.why2{grid-template-columns:1fr 300px 1fr;gap:44px}.why2 .col{gap:36px}
   .why2 .col:first-child .wi{flex-direction:row-reverse;text-align:right;padding:16px 16px 16px 26px}}
 /* atsauksmes: miera stāvoklī vienādas, krāsa — tikai uz hover */
 .t{border-radius:var(--r-md);padding:24px 22px;background:var(--surface);border:1px solid var(--line);
   transition:opacity .5s ease,transform .5s ease,background .18s,border-color .18s}
-.t:hover{background:var(--soft);border-color:var(--line-str)}
+.t:hover{background:var(--tint);border-color:var(--line-str)}
+.q-sec{background:var(--soft);border-radius:40px;margin:0 12px}
+.cf{border-radius:40px 40px 0 0}
 .t-av{background:var(--brand)}
 .pg-hd{border-radius:0 0 40px 40px;border-bottom:0}
 
@@ -581,7 +597,7 @@ var ts=document.querySelectorAll('.t');
 function chk(){ts.forEach(function(t){var q=t.querySelector('blockquote');if(!t.classList.contains('open'))t.classList.toggle('long',q.scrollHeight>q.clientHeight+2);});}
 ts.forEach(function(t){var bt=t.querySelector('.more');bt.addEventListener('click',function(){var o=t.classList.toggle('open');bt.textContent=o?'Mazāk':'Lasīt vairāk';bt.setAttribute('aria-expanded',o);});});
 chk();window.addEventListener('load',chk);window.addEventListener('resize',chk);
-document.querySelectorAll('[data-tr]').forEach(function(x){x.addEventListener('click',function(){var r=document.getElementById('tr');r.scrollBy({left:(+x.dataset.tr)*(r.firstElementChild.offsetWidth+18),behavior:'smooth'});});});
+document.querySelectorAll('[data-tr]').forEach(function(x){x.addEventListener('click',function(){var r=document.getElementById('tr');r.scrollBy({left:(+x.dataset.tr)*(r.firstElementChild.offsetWidth+(parseFloat(getComputedStyle(r).columnGap)||22)),behavior:'smooth'});});});
 if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);setTimeout(function(){e.target.style.transitionDelay='';},900);}});},{rootMargin:'0px 0px -8% 0px'});
  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*70+'ms';io.observe(el);});

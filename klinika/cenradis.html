@@ -100,14 +100,14 @@ svg{display:block;width:1em;height:1em}
 .btn-sm{padding:10px 17px;font-size:14px}
 
 /* ---------- sekcijas ---------- */
-.sec{padding:56px 0}
-.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.sec{padding:64px 0}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
 .sec-head.mid{align-items:center;text-align:center}
 .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--brand)}
 .sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:800}
 .sec-head p{color:var(--muted);max-width:62ch;font-size:16px}
 .sec-head.mid p{margin-inline:auto}
-@media (min-width:800px){.sec{padding:76px 0}}
+@media (min-width:800px){.sec{padding:96px 0}.sec-head{margin-bottom:56px}}
 
 /* ---------- foto vietturis ---------- */
 .ph{position:relative;display:grid;place-items:center;background:var(--tint);color:var(--brand);
@@ -123,7 +123,8 @@ svg{display:block;width:1em;height:1em}
 /* ---------- zooveikals + zīmoli ---------- */
 .shop{display:grid;gap:22px;align-items:center}
 .shop-ph{aspect-ratio:4/3;border-radius:var(--r-md)}
-.shop-b{display:flex;flex-direction:column;gap:12px}
+.shop-b{display:flex;flex-direction:column;gap:16px}
+.shop-b p+p{margin-top:6px}
 .shop-b h2{font-size:clamp(22px,3.2vw,31px);font-weight:800}
 .shop-b p{color:var(--body);font-size:15px;max-width:52ch}
 .shop .brands{justify-content:flex-start;gap:14px 28px;margin-top:8px}
@@ -370,7 +371,7 @@ svg{display:block;width:1em;height:1em}
 .dir-d{font-size:14px;color:var(--muted);line-height:1.5}
 .dir-i{display:grid;place-items:center}
 .dir-i svg{width:48%;height:48%}
-.dirs-more{display:flex;justify-content:center;margin-top:32px}
+.dirs-more{display:flex;justify-content:center;margin-top:44px}
 
 .dir,.dir b,.dir-d,.dir-i{transition:opacity .5s ease,transform .25s ease,background .18s,color .18s,border-color .18s,box-shadow .18s}
 .dir:hover,.dir:focus-visible{background:var(--brand);border-color:var(--brand)}
@@ -380,11 +381,11 @@ svg{display:block;width:1em;height:1em}
 /* ---------- par klīniku (īss bloks) ---------- */
 .ab{display:grid;gap:30px;align-items:center}
 .ab-ph{aspect-ratio:4/3}
-.ab-b{display:flex;flex-direction:column;gap:14px;padding:6px 4px}
+.ab-b{display:flex;flex-direction:column;gap:20px;padding:6px 4px}
 .ab-b h2{font-size:clamp(25px,3.6vw,36px);font-weight:800}
 .ab-b p{max-width:54ch}
-.ab-b .btn{align-self:flex-start;margin-top:10px}
-@media (min-width:880px){.ab{grid-template-columns:1fr 1fr;gap:72px}.ab-b{padding:10px 8px;gap:16px}}
+.ab-b .btn{align-self:flex-start;margin-top:12px}
+@media (min-width:880px){.ab{grid-template-columns:1fr 1fr;gap:72px}.ab-b{padding:10px 8px;gap:22px}}
 
 /* ---------- kāpēc izvēlas mūs ---------- */
 .wi{display:flex;gap:13px;align-items:flex-start}
@@ -412,8 +413,21 @@ svg{display:block;width:1em;height:1em}
 .tg{display:grid;gap:18px;grid-template-columns:1fr}
 @media (min-width:880px){.tg{grid-template-columns:repeat(3,1fr);gap:22px}}
 
+/* ---------- atsauksmju slīdnis: vesels skaits kartīšu, neviena nav nogriezta ---------- */
+.tr-wrap{position:relative}
+.tr{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 18px;scrollbar-width:none;align-items:stretch}
+.tr::-webkit-scrollbar{display:none}
+.tr .t{flex:0 0 100%;scroll-snap-align:start}
+@media (min-width:640px){.tr .t{flex-basis:calc((100% - 22px)/2)}}
+@media (min-width:880px){.tr .t{flex-basis:calc((100% - 44px)/3)}}
+.tr-nav{display:flex;gap:10px;justify-content:center;margin-top:16px}
+.tr-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line-str);background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center;padding:0;transition:.15s}
+.tr-nav button:hover{background:var(--brand);border-color:var(--brand);color:#fff}
+.tr-nav svg{width:18px;height:18px}
+.tr-nav .prev svg{transform:rotate(180deg)}
+
 /* ---------- partneri ---------- */
-.partners .sec-head{margin-bottom:52px}
+.partners .sec-head{margin-bottom:64px}
 .plogos{display:flex;flex-wrap:wrap;gap:34px 72px;align-items:center;justify-content:center}
 .plogos img{height:60px;width:auto;mix-blend-mode:multiply;opacity:.9;transition:opacity .2s}
 .plogos img:hover{opacity:1}
@@ -426,7 +440,7 @@ svg{display:block;width:1em;height:1em}
 @media (min-width:620px){.cf-cols{grid-template-columns:1fr 1fr}}
 @media (min-width:980px){.cf-cols{grid-template-columns:1.3fr .8fr 1.15fr 1.2fr;gap:48px;padding:64px 0 48px}}
 .cf-c{display:flex;flex-direction:column;gap:14px;font-size:14.5px;min-width:0}
-.cf-c .logo-img{height:50px}
+.cf-c .logo-img{height:44px;margin-top:6px}
 .cf-brand p{max-width:26ch;line-height:1.55}
 .cf-h{font-family:var(--fd);font-size:16px;font-weight:800;color:var(--cf-hi);margin-bottom:4px}
 .cf-menu,.cf-list{display:flex;flex-direction:column;gap:11px}
@@ -533,25 +547,24 @@ svg{display:block;width:1em;height:1em}
 /* ===== Klīnika (1) ===== */
 :root{--fh-shade:linear-gradient(90deg,rgba(9,56,97,0) 28%,rgba(9,56,97,.78) 68%,rgba(9,56,97,.9));
   --cf-bg:var(--navy);--cf-fg:#D5E6F6;--cf-hi:#fff;--cf-chip:rgba(255,255,255,.1);--cf-line:rgba(255,255,255,.16)}
-@media (min-width:900px){.fh-in{display:flex;justify-content:flex-end}.fh-in>div{width:min(46%,520px)}}
+@media (min-width:900px){.fh{align-items:center}.fh-in{display:flex;justify-content:flex-end;padding-top:80px;padding-bottom:80px}.fh-in>div{width:min(46%,520px)}}
 @media (max-width:899px){.fh{--fh-shade:linear-gradient(180deg,rgba(9,56,97,.15),rgba(9,56,97,.88) 78%)}}
 .dir{background:var(--tint);border-radius:var(--r-md);padding:30px 22px 28px}
 .dir:hover{transform:translateY(-3px)}
 .dir-i{width:62px;height:62px;border-radius:50%;background:var(--brand);color:#fff;margin-bottom:8px}
 .ab-sec{background:var(--soft)}
 .ab-ph{border-radius:var(--r-md)}
-.why-sec .sec-head{margin-bottom:38px}
 .why1{display:grid;gap:20px;align-items:center}
-.why1 .wi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 18px;box-shadow:0 10px 26px -20px rgba(9,56,97,.5)}
+.why1 .wi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:20px 22px;box-shadow:0 10px 26px -20px rgba(9,56,97,.5)}
 .why1-ph{aspect-ratio:4/5;border-radius:999px 999px var(--r-md) var(--r-md);max-width:340px;width:100%;margin:0 auto}
 .why1 .col{display:grid;gap:16px}
 @media (min-width:900px){.why1{grid-template-columns:1fr 330px 1fr;gap:34px}.why1-ph{order:0}
   .why1 .col:first-child .wi{margin-right:-22px;position:relative;z-index:2}
   .why1 .col:last-child .wi{margin-left:-22px;position:relative;z-index:2}}
 .q-sec{background:var(--soft)}
-.t{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:24px 22px;border-top:4px solid var(--brand)}
-.t:nth-child(2){border-top-color:var(--navy)}
-.partners{padding-top:28px}
+.t{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:26px 24px;border-top:4px solid var(--brand);transition:opacity .5s ease,transform .5s ease,border-color .18s}
+.t:hover{border-top-color:var(--navy)}
+@media (min-width:800px){.plogos img{height:96px}}
 
 </style>
 </head>
@@ -577,7 +590,7 @@ var ts=document.querySelectorAll('.t');
 function chk(){ts.forEach(function(t){var q=t.querySelector('blockquote');if(!t.classList.contains('open'))t.classList.toggle('long',q.scrollHeight>q.clientHeight+2);});}
 ts.forEach(function(t){var bt=t.querySelector('.more');bt.addEventListener('click',function(){var o=t.classList.toggle('open');bt.textContent=o?'Mazāk':'Lasīt vairāk';bt.setAttribute('aria-expanded',o);});});
 chk();window.addEventListener('load',chk);window.addEventListener('resize',chk);
-document.querySelectorAll('[data-tr]').forEach(function(x){x.addEventListener('click',function(){var r=document.getElementById('tr');r.scrollBy({left:(+x.dataset.tr)*(r.firstElementChild.offsetWidth+18),behavior:'smooth'});});});
+document.querySelectorAll('[data-tr]').forEach(function(x){x.addEventListener('click',function(){var r=document.getElementById('tr');r.scrollBy({left:(+x.dataset.tr)*(r.firstElementChild.offsetWidth+(parseFloat(getComputedStyle(r).columnGap)||22)),behavior:'smooth'});});});
 if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);setTimeout(function(){e.target.style.transitionDelay='';},900);}});},{rootMargin:'0px 0px -8% 0px'});
  document.querySelectorAll('.reveal').forEach(function(el,i){el.style.transitionDelay=(i%4)*70+'ms';io.observe(el);});
